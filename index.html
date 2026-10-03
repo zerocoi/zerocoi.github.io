@@ -3,518 +3,372 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+  <meta name="title" content="Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors">
+  <meta name="description" content="ZeroCOI generates semantically aligned and physically plausible 3D canine-object interactions from text prompts without paired text-object-motion supervision.">
+  <meta name="keywords" content="ZeroCOI, canine-object interaction, text-to-motion, video diffusion, 3D motion generation, SIGGRAPH Asia 2026">
+  <meta name="author" content="Siyu Chen, Zan Wang, Hao Xu, Minghe Zhang, Mingtao Pei, Wei Liang">
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
+  <meta property="og:site_name" content="ZeroCOI">
+  <meta property="og:title" content="Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors">
+  <meta property="og:description" content="Text-guided, semantically aligned, and physically plausible 3D canine-object interaction generation.">
+  <meta property="og:url" content="https://zerocoi.github.io/">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="ZeroCOI">
+  <meta name="twitter:description" content="Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors">
+  <meta name="citation_title" content="Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors">
+  <meta name="citation_author" content="Chen, Siyu">
+  <meta name="citation_author" content="Wang, Zan">
+  <meta name="citation_author" content="Xu, Hao">
+  <meta name="citation_author" content="Zhang, Minghe">
+  <meta name="citation_author" content="Pei, Mingtao">
+  <meta name="citation_author" content="Liang, Wei">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="SIGGRAPH Asia 2026">
+  <meta name="citation_pdf_url" content="https://zerocoi.github.io/static/pdfs/paper.pdf">
+  <meta name="theme-color" content="#ffffff">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
+  <title>ZeroCOI</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="icon" type="image/png" href="static/images/icon-favicon.png">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <script defer src="static/js/reveal.js"></script>
+  <script defer src="static/js/results-carousel.js"></script>
+  <script defer src="static/js/video-switcher.js"></script>
 </head>
 <body>
+  <header class="publication-header">
+    <div class="header-shell">
+      <h1 class="reveal">Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors</h1>
+      <p class="venue reveal" style="--reveal-delay: 70ms;">SIGGRAPH Asia 2026</p>
 
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
+      <div class="authors reveal" style="--reveal-delay: 120ms;" aria-label="Authors">
+        <span>Siyu Chen</span><span>Zan Wang</span><span>Hao Xu</span>
+        <span>Minghe Zhang</span><span>Mingtao Pei</span>
+        <span>Wei Liang<sup class="corresponding-mark" aria-label="Corresponding author">✉️</sup></span>
       </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
+
+      <p class="affiliation reveal" style="--reveal-delay: 170ms;">School of Computer Science &amp; Technology, Beijing Institute of Technology</p>
+      <p class="corresponding-note reveal" style="--reveal-delay: 210ms;"><span class="corresponding-icon" aria-hidden="true">✉️</span> indicates corresponding author</p>
+
+      <nav class="resource-links reveal" style="--reveal-delay: 250ms;" aria-label="Paper resources">
+        <span class="resource-button arxiv is-disabled" aria-disabled="true" title="Coming soon">
+          <i class="ai ai-arxiv" aria-hidden="true"></i><span>arXiv</span>
+        </span>
+        <a class="resource-button paper" href="static/pdfs/paper.pdf" target="_blank" rel="noopener">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i><span>Paper</span>
         </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
+        <a class="resource-button supplementary" href="static/pdfs/supp.pdf" target="_blank" rel="noopener">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i><span>Supplementary</span>
         </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
+        <span class="resource-button video is-disabled" aria-disabled="true" title="Coming soon">
+          <i class="fas fa-video" aria-hidden="true"></i><span>Video</span>
+        </span>
+        <span class="resource-button code is-disabled" aria-disabled="true" title="Coming soon">
+          <i class="fab fa-github" aria-hidden="true"></i><span>Code</span>
+        </span>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
+  <main>
+    <section class="content-shell teaser-section reveal" aria-label="ZeroCOI teaser">
+      <video class="teaser-video" autoplay muted loop playsinline controls preload="metadata">
+        <source src="static/videos/teaser.mp4" type="video/mp4">
+        Your browser does not support the video tag.
       </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
+      <p class="lead-caption">ZeroCOI generates semantically aligned and physically plausible 3D canine-object interactions from text prompts, without requiring paired text–object–motion supervision.</p>
+    </section>
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
+    <section class="content-shell paper-section key-insight-section reveal" id="key-insight">
+      <h2 class="section-heading">Key Insight</h2>
+
+      <div class="key-insight-grid">
+        <article class="insight-panel semantic-prior">
+          <h3>Semantic Prior</h3>
+          <img src="static/images/semantic.jpg" alt="Semantic priors for spatial relationships and interaction-specific motion patterns" loading="lazy">
+          <div class="insight-labels" aria-label="Semantic prior concepts">
+            <span style="--label-color: #C2726C;">Spatial Relationships</span>
+            <span style="--label-color: #D9BB25;">Interaction-specific Motion Patterns</span>
+          </div>
+        </article>
+
+        <article class="insight-panel physical-prior">
+          <h3>Physical Prior</h3>
+          <img src="static/images/physical.jpg" alt="Physical priors illustrating interpenetration and floating artifacts" loading="lazy">
+          <div class="insight-labels" aria-label="Physical prior concepts">
+            <span style="--label-color: #D0730C;">Large-area Interpenetration</span>
+            <span style="--label-color: #91ACE0;">Obvious Floating</span>
+          </div>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+      <p class="key-insight-intro">Video diffusion models encode rich semantic knowledge and implicit physical priors, providing training-time supervision in the absence of paired interaction data.</p>
+    </section>
 
+    <section class="content-shell paper-section reveal" id="abstract">
+      <h2 class="section-heading">Abstract</h2>
+      <p>
+        Generating realistic 3D Canine-Object Interaction from text is crucial for scalable asset production and immersive experiences in games and virtual reality. Despite substantial advances in Human-Object Interaction generation, extending this success to Canine-Object Interaction generation remains challenging, primarily due to the scarcity of text–object–motion pairings and heterogeneous skeletal topologies in existing animal motion datasets. To tackle these issues, we propose ZeroCOI, a zero-shot learning framework that synthesizes Canine-Object Interaction from text prompts without relying on paired text–object–motion supervision. Our key insight is to harness the rich semantic knowledge and implicit physics priors encoded in large-scale video diffusion foundation models trained on diverse in-the-wild Canine-Object Interaction patterns. ZeroCOI first learns canine motion priors from a topology-unified dataset using a text-to-motion diffusion model. It then decouples canonical motion generation from spatial interaction placement, introducing a control branch that injects semantic and spatial interaction cues via distribution-level video-domain Score Distillation Sampling while encouraging physical plausibility through geometric constraints. Extensive experiments demonstrate that ZeroCOI enables semantically aligned and physically plausible Canine-Object Interaction synthesis from text prompts, with robust generalization to unseen object categories and geometries. Furthermore, extended applications illustrate the scalability of ZeroCOI across various scenarios, including cross-species extensions, human-canine interactions, and scene-level interactions, demonstrating the tremendous potential for the broad community.
+      </p>
+    </section>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+    <section class="content-shell paper-section reveal" id="method">
+      <h2 class="section-heading">Overview</h2>
+      <figure class="method-figure">
+        <img src="static/images/method.png" alt="Overview of the ZeroCOI framework" loading="lazy">
+        <figcaption>
+          We first augment motion-centric prompts with object-aware interaction descriptions to facilitate subsequent training. A text-to-motion diffusion model is pretrained to learn a robust canine motion prior, while object-aware finetuning leverages ZeroScope via video-domain SDS to supervise interaction semantics. To inject interaction-specific priors without disrupting the learned motion distribution, we explicitly decouple canonical motion generation from world-space spatial placement, and we render generated motions using precomputed mesh textures to ensure stable SDS supervision.
+        </figcaption>
+      </figure>
+    </section>
 
+    <section class="content-shell paper-section results-section reveal" id="results">
+      <h2 class="section-heading">Results</h2>
 
+      <section class="results-subsection">
+        <h3 class="results-subheading">Compare with Baselines</h3>
+        <div class="results-carousel" data-results-carousel>
+          <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous comparison">&#10094;</button>
+          <div class="carousel-slides">
+            <article class="comparison-slide is-active" data-slide>
+              <figure class="prompt-card">
+                <figcaption>“The labrador stands on two rear legs on the bed”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/stand_up.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/stand_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/stand_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/stand_animate.mp4" type="video/mp4"></video></figure>
+            </article>
 
+            <article class="comparison-slide" data-slide hidden>
+              <figure class="prompt-card">
+                <figcaption>“The female african wild dog attacks the stool”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_stool.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_stool_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_stool_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_stool_animate.mp4" type="video/mp4"></video></figure>
+            </article>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <article class="comparison-slide slide-videos-up" data-slide hidden>
+              <figure class="prompt-card">
+                <figcaption>“The pug stands still under the table and runs”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/run_under.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/run_under_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/run_under_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/run_under_animate.mp4" type="video/mp4"></video></figure>
+            </article>
+          </div>
+          <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next comparison">&#10095;</button>
+          <div class="carousel-pagination" aria-label="Comparison result pages">
+            <button class="carousel-dot is-active" type="button" data-carousel-dot="0" aria-label="Show comparison 1"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show comparison 2"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show comparison 3"></button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+      </section>
 
+      <section class="results-subsection">
+        <h3 class="results-subheading">Generalization to Unseen Objects</h3>
+        <div class="results-carousel" data-results-carousel>
+          <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous unseen-object result">&#10094;</button>
+          <div class="carousel-slides">
+            <article class="comparison-slide is-active" data-slide>
+              <figure class="prompt-card">
+                <figcaption>“The female dhole sleeps on the luxury sofa and then rests”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/sleep.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/sleep_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/sleep_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video autoplay muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/sleep_animate.mp4" type="video/mp4"></video></figure>
+            </article>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+            <article class="comparison-slide" data-slide hidden>
+              <figure class="prompt-card">
+                <figcaption>“The male dhole fights and then reacts swiftly on the wooden fence”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_fench.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_fench_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_fench_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/attack_fench_animate.mp4" type="video/mp4"></video></figure>
+            </article>
+
+            <article class="comparison-slide slide-videos-down" data-slide hidden>
+              <figure class="prompt-card">
+                <figcaption>“The wolf sits and gives a paw in front of the bookshelf”</figcaption>
+              </figure>
+              <figure class="video-result"><figcaption>ZeroCOI</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/give_paw.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>TSTMotion</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/give_paw_tst.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>DAViD</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/give_paw_david.mp4" type="video/mp4"></video></figure>
+              <figure class="video-result"><figcaption>AnimateAnyMesh</figcaption><video muted loop playsinline preload="metadata"><source src="static/results/videos-cropped/give_paw_animate.mp4" type="video/mp4"></video></figure>
+            </article>
+          </div>
+          <button class="carousel-arrow carousel-arrow-next" type="button" aria-label="Next unseen-object result">&#10095;</button>
+          <div class="carousel-pagination" aria-label="Unseen-object result pages">
+            <button class="carousel-dot is-active" type="button" data-carousel-dot="0" aria-label="Show unseen-object result 1"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="1" aria-label="Show unseen-object result 2"></button>
+            <button class="carousel-dot" type="button" data-carousel-dot="2" aria-label="Show unseen-object result 3"></button>
+          </div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+      </section>
+
+      <section class="results-subsection behavior-subsection adaptive-behavior">
+        <h3 class="results-subheading">Adaptive Interaction Behavior</h3>
+        <div class="behavior-grid">
+          <article class="behavior-card object-card" data-video-switcher aria-label="Object-adaptive interaction examples">
+            <div class="behavior-options" role="tablist" aria-label="Select an object">
+              <button class="behavior-option is-active" type="button" role="tab" aria-selected="true" data-video-src="static/results/behavior/videos/ad-fabric-sofa.mp4" data-prompt="A dog abruptly jumps high and dashes ahead on the fabric sofa">
+                <img src="static/results/behavior/icons/fabric-sofa.png" alt="" aria-hidden="true"><span>fabric sofa</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/ad-leather-sofa.mp4" data-prompt="A dog abruptly jumps high and dashes ahead on the leather sofa">
+                <img src="static/results/behavior/icons/leather-sofa.png" alt="" aria-hidden="true"><span>leather sofa</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/ad-chair.mp4" data-prompt="A dog abruptly jumps high and dashes ahead on the chair">
+                <img src="static/results/behavior/icons/chair.png" alt="" aria-hidden="true"><span>chair</span>
+              </button>
+            </div>
+            <p class="behavior-prompt" data-behavior-prompt>A dog abruptly jumps high and dashes ahead on the fabric sofa</p>
+            <div class="behavior-video-frame">
+              <video autoplay muted loop playsinline preload="metadata"><source src="static/results/behavior/videos/ad-fabric-sofa.mp4" type="video/mp4"></video>
+            </div>
+          </article>
+
+          <article class="behavior-card species-card" data-video-switcher aria-label="Species-adaptive interaction examples">
+            <div class="behavior-options" role="tablist" aria-label="Select a canine">
+              <button class="behavior-option is-active" type="button" role="tab" aria-selected="true" data-video-src="static/results/behavior/videos/ad-male-wild-dog.mp4" data-prompt="The male spotted hyena runs to the bowl and then pounces on it">
+                <img src="static/results/behavior/icons/male-wild-dog.png" alt="" aria-hidden="true"><span>male spotted hyena</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/ad-female-wild-dog.mp4" data-prompt="The female wild dog runs to the bowl and then pounces on it">
+                <img src="static/results/behavior/icons/female-wild-dog.png" alt="" aria-hidden="true"><span>female wild dog</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/ad-male-arctic-wolf.mp4" data-prompt="The male arctic wolf runs to the bowl and then pounces on it">
+                <img src="static/results/behavior/icons/male-arctic-wolf.png" alt="" aria-hidden="true"><span>male arctic wolf</span>
+              </button>
+            </div>
+            <p class="behavior-prompt" data-behavior-prompt>The male spotted hyena runs to the bowl and then pounces on it</p>
+            <div class="behavior-video-frame">
+              <video autoplay muted loop playsinline preload="metadata"><source src="static/results/behavior/videos/ad-male-wild-dog.mp4" type="video/mp4"></video>
+            </div>
+          </article>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+      </section>
+
+      <section class="results-subsection behavior-subsection">
+        <h3 class="results-subheading">Diverse Interaction Behavior</h3>
+        <div class="behavior-grid">
+          <article class="behavior-card motion-card" data-video-switcher aria-label="Motion dynamics examples">
+            <div class="behavior-options" role="tablist" aria-label="Select a motion dynamic">
+              <button class="behavior-option is-active" type="button" role="tab" aria-selected="true" data-video-src="static/results/behavior/videos/md-dynamic-1.mp4" data-prompt="The female gray wolf trots forward, then jumps onto the sofa, lands and walks a short distance">
+                <img class="vector-icon" src="static/results/behavior/icons/motion-dynamic-1.svg" alt="" aria-hidden="true"><span>motion dynamic 1</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/md-dynamic-2.mp4" data-prompt="The female gray wolf trots forward, then jumps onto the sofa, lands and walks a short distance">
+                <img class="vector-icon" src="static/results/behavior/icons/motion-dynamic-2.svg" alt="" aria-hidden="true"><span>motion dynamic 2</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/md-dynamic-3.mp4" data-prompt="The female gray wolf trots forward, then jumps onto the sofa, lands and walks a short distance">
+                <img class="vector-icon" src="static/results/behavior/icons/motion-dynamic-3.svg" alt="" aria-hidden="true"><span>motion dynamic 3</span>
+              </button>
+            </div>
+            <p class="behavior-prompt" data-behavior-prompt>The female gray wolf trots forward, then jumps onto the sofa, lands and walks a short distance</p>
+            <div class="behavior-video-frame">
+              <video autoplay muted loop playsinline preload="metadata"><source src="static/results/behavior/videos/md-dynamic-1.mp4" type="video/mp4"></video>
+            </div>
+          </article>
+
+          <article class="behavior-card trajectory-card" data-video-switcher aria-label="Interaction trajectory examples">
+            <div class="behavior-options" role="tablist" aria-label="Select a trajectory">
+              <button class="behavior-option is-active" type="button" role="tab" aria-selected="true" data-video-src="static/results/behavior/videos/md-trajectory-1.mp4" data-prompt="The small pug steadily walks toward the chair, ending under the chair">
+                <img class="vector-icon" src="static/results/behavior/icons/trajectory-1.svg" alt="" aria-hidden="true"><span>trajectory 1</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/md-trajectory-2.mp4" data-prompt="The small pug steadily walks toward the chair, ending under the chair">
+                <img class="vector-icon" src="static/results/behavior/icons/trajectory-2.svg" alt="" aria-hidden="true"><span>trajectory 2</span>
+              </button>
+              <button class="behavior-option" type="button" role="tab" aria-selected="false" data-video-src="static/results/behavior/videos/md-trajectory-3.mp4" data-prompt="The small pug steadily walks toward the chair, ending under the chair">
+                <img class="vector-icon" src="static/results/behavior/icons/trajectory-3.svg" alt="" aria-hidden="true"><span>trajectory 3</span>
+              </button>
+            </div>
+            <p class="behavior-prompt" data-behavior-prompt>The small pug steadily walks toward the chair, ending under the chair</p>
+            <div class="behavior-video-frame">
+              <video autoplay muted loop playsinline preload="metadata"><source src="static/results/behavior/videos/md-trajectory-1.mp4" type="video/mp4"></video>
+            </div>
+          </article>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
+      </section>
 
+      <section class="results-subsection extended-subsection cross-species-subsection">
+        <h3 class="results-subheading">Extended Applications: Cross-Species Extension</h3>
+        <div class="extended-grid extended-card interactive-extended-card">
+          <figure class="extended-example">
+            <figcaption class="extended-prompt">A female hippo jumps on the tree trunk</figcaption>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="static/results/extended/videos/hippo.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="extended-example">
+            <figcaption class="extended-prompt">A professional woman sits down on the bed, lies down, then stands up and walks a short distance before stopping</figcaption>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="static/results/extended/videos/human.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <div class="extended-hover-overlay" aria-hidden="true">
+            <p>Beyond canines, our framework can be adapted to other articulated species by replacing only the motion dataset and the underlying parametric body model.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="results-subsection extended-subsection human-canine-subsection">
+        <h3 class="results-subheading">Extended Applications: Human–Canine Interaction</h3>
+        <div class="extended-grid extended-card interactive-extended-card">
+          <figure class="extended-example">
+            <figcaption class="extended-prompt">A juvenile gray wolf runs toward a waving sporty woman, playfully pounces on her legs</figcaption>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="static/results/extended/videos/interaction-human2.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <figure class="extended-example">
+            <figcaption class="extended-prompt">A poodle gives a paw to a crouching printed shirt man and stands on its rear legs as the man gradually stands up</figcaption>
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="static/results/extended/videos/interaction-human1.mp4" type="video/mp4">
+            </video>
+          </figure>
+          <div class="extended-hover-overlay" aria-hidden="true">
+            <p>For this application, we treat the human motion as a time-varying mesh sequence, replacing the static object mesh in the original pipeline.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="results-subsection extended-subsection scene-subsection">
+        <h3 class="results-subheading">Extended Applications: Scene-Level Interaction</h3>
+        <figure class="scene-example extended-card static-extended-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="static/results/extended/videos/scene-cropped.mp4" type="video/mp4">
+          </video>
+          <figcaption class="scene-prompt-overlay">A juvenile huskydog jumps onto the sofa</figcaption>
+        </figure>
+      </section>
+    </section>
 
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    <section class="content-shell paper-section bibtex-section reveal" id="bibtex">
+      <h2 class="section-heading">BibTeX</h2>
+      <p class="bibtex-intro">If you find this project helpful to your research, please consider citing:</p>
+      <pre class="bibtex-block"><code>@inproceedings{chen2026learning,
+  title={Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors},
+  author={Chen, Siyu and Wang, Zan and Xu, Hao and Zhang, Minghe and Pei, Mingtao and Liang, Wei},
+  booktitle={SIGGRAPH Asia 2026 Conference Papers},
+  year={2026}
 }</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="content-shell">
+      <p>This website is based on the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>.</p>
     </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+</body>
+</html>

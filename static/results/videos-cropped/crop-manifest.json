@@ -1,0 +1,314 @@
+{
+  "attack_fench.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1812,
+      920,
+      108,
+      36
+    ],
+    "area_removed_percent": 19.6
+  },
+  "attack_fench_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1812,
+      920,
+      108,
+      36
+    ],
+    "area_removed_percent": 19.6
+  },
+  "attack_fench_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1812,
+      920,
+      108,
+      36
+    ],
+    "area_removed_percent": 19.6
+  },
+  "attack_fench_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1812,
+      920,
+      108,
+      36
+    ],
+    "area_removed_percent": 19.6
+  },
+  "attack_stool.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1908,
+      818,
+      12,
+      204
+    ],
+    "area_removed_percent": 24.7
+  },
+  "attack_stool_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1908,
+      818,
+      12,
+      204
+    ],
+    "area_removed_percent": 24.7
+  },
+  "attack_stool_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1908,
+      818,
+      12,
+      204
+    ],
+    "area_removed_percent": 24.7
+  },
+  "attack_stool_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1908,
+      818,
+      12,
+      204
+    ],
+    "area_removed_percent": 24.7
+  },
+  "give_paw.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1820,
+      842,
+      90,
+      54
+    ],
+    "area_removed_percent": 26.1
+  },
+  "give_paw_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1820,
+      842,
+      90,
+      54
+    ],
+    "area_removed_percent": 26.1
+  },
+  "give_paw_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1820,
+      842,
+      90,
+      54
+    ],
+    "area_removed_percent": 26.1
+  },
+  "give_paw_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1820,
+      842,
+      90,
+      54
+    ],
+    "area_removed_percent": 26.1
+  },
+  "run_under.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1688,
+      674,
+      168,
+      342
+    ],
+    "area_removed_percent": 45.1
+  },
+  "run_under_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1688,
+      674,
+      168,
+      342
+    ],
+    "area_removed_percent": 45.1
+  },
+  "run_under_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1688,
+      674,
+      168,
+      342
+    ],
+    "area_removed_percent": 45.1
+  },
+  "run_under_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1688,
+      674,
+      168,
+      342
+    ],
+    "area_removed_percent": 45.1
+  },
+  "sleep.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1640,
+      668,
+      150,
+      192
+    ],
+    "area_removed_percent": 47.2
+  },
+  "sleep_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1640,
+      668,
+      150,
+      192
+    ],
+    "area_removed_percent": 47.2
+  },
+  "sleep_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1640,
+      668,
+      150,
+      192
+    ],
+    "area_removed_percent": 47.2
+  },
+  "sleep_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1640,
+      668,
+      150,
+      192
+    ],
+    "area_removed_percent": 47.2
+  },
+  "stand_animate.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1484,
+      872,
+      264,
+      30
+    ],
+    "area_removed_percent": 37.6
+  },
+  "stand_david.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1484,
+      872,
+      264,
+      30
+    ],
+    "area_removed_percent": 37.6
+  },
+  "stand_tst.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1484,
+      872,
+      264,
+      30
+    ],
+    "area_removed_percent": 37.6
+  },
+  "stand_up.mp4": {
+    "source": [
+      1920,
+      1080
+    ],
+    "crop": [
+      1484,
+      872,
+      264,
+      30
+    ],
+    "area_removed_percent": 37.6
+  }
+}
