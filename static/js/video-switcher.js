@@ -17,12 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealVideo = (nextVideo, requestId) => {
       if (requestId !== changeId) return;
       const previousVideo = activeVideo;
-      nextVideo.muted = true;
-      nextVideo.play().catch(() => {});
       nextVideo.classList.add("is-visible");
       previousVideo.classList.remove("is-visible");
       activeVideo = nextVideo;
-      window.setTimeout(() => previousVideo.pause(), 300);
+      window.setTimeout(() => previousVideo.pause(), 570);
     };
 
     const selectVideo = (button, isInitial = false) => {
@@ -50,12 +48,33 @@ document.addEventListener("DOMContentLoaded", () => {
       source.setAttribute("src", nextSource);
       nextVideo.load();
 
-      if (nextVideo.readyState >= 2) {
-        revealVideo(nextVideo, requestId);
+      const revealWhenPainted = async () => {
+        nextVideo.muted = true;
+        try {
+          await nextVideo.play();
+        } catch (_) {
+          // Muted inline playback may still be deferred by the browser.
+        }
+
+        if (requestId !== changeId) return;
+
+        if ("requestVideoFrameCallback" in nextVideo) {
+          nextVideo.requestVideoFrameCallback(() => {
+            requestAnimationFrame(() => revealVideo(nextVideo, requestId));
+          });
+        } else {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => revealVideo(nextVideo, requestId));
+          });
+        }
+      };
+
+      if (nextVideo.readyState >= 3) {
+        revealWhenPainted();
       } else {
         nextVideo.addEventListener(
-          "loadeddata",
-          () => revealVideo(nextVideo, requestId),
+          "canplay",
+          revealWhenPainted,
           { once: true }
         );
       }
