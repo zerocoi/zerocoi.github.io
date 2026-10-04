@@ -35,11 +35,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/index.css?v=20261004-6">
+  <link rel="stylesheet" href="static/css/index.css?v=20261004-8">
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/reveal.js"></script>
-  <script defer src="static/js/results-carousel.js?v=20261004-6"></script>
-  <script defer src="static/js/video-switcher.js?v=20261004-6"></script>
+  <script defer src="static/js/results-carousel.js?v=20261004-7"></script>
+  <script defer src="static/js/video-switcher.js?v=20261004-7"></script>
+  <script defer src="static/js/bibtex-copy.js?v=20261004-8"></script>
 </head>
 <body>
   <header class="publication-header">
@@ -130,7 +131,7 @@
     <section class="content-shell paper-section results-section reveal" id="results">
       <h2 class="section-heading">Results</h2>
 
-      <section class="results-subsection">
+      <section class="results-subsection carousel-results-subsection">
         <h3 class="results-subheading">Compare with Baselines</h3>
         <div class="results-carousel" data-results-carousel>
           <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous comparison">&#10094;</button>
@@ -174,7 +175,7 @@
         </div>
       </section>
 
-      <section class="results-subsection">
+      <section class="results-subsection carousel-results-subsection">
         <h3 class="results-subheading">Generalization to Unseen Objects</h3>
         <div class="results-carousel" data-results-carousel>
           <button class="carousel-arrow carousel-arrow-prev" type="button" aria-label="Previous unseen-object result">&#10094;</button>
@@ -356,12 +357,18 @@
     <section class="content-shell paper-section bibtex-section reveal" id="bibtex">
       <h2 class="section-heading">BibTeX</h2>
       <p class="bibtex-intro">If you find this project helpful to your research, please consider citing:</p>
-      <pre class="bibtex-block"><code>@inproceedings{chen2026learning,
+      <div class="bibtex-code-wrap">
+        <button class="bibtex-copy-button" type="button" data-copy-bibtex aria-label="Copy BibTeX citation">
+          <i class="fas fa-copy" aria-hidden="true"></i>
+          <span data-copy-label>Copy</span>
+        </button>
+        <pre class="bibtex-block"><code id="bibtex-code">@inproceedings{chen2026learning,
   title={Learning to Generate Text-guided 3D Canine-Object Interactions via Video Diffusion Priors},
   author={Chen, Siyu and Wang, Zan and Xu, Hao and Zhang, Minghe and Pei, Mingtao and Liang, Wei},
   booktitle={SIGGRAPH Asia 2026 Conference Papers},
   year={2026}
 }</code></pre>
+      </div>
     </section>
   </main>
 
